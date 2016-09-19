@@ -53,4 +53,5 @@ def NameGenerator():
 
     return (chosen_name + " " + chosen_surname)
 
-print(NameGenerator())
+if __name__ == "__main__"
+    print(NameGenerator())
