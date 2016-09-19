@@ -43,4 +43,3 @@ def ValidadorCartao(cardNumberInt):
 
 if __name__ == '__main__':
     ValidadorCartao(input("Digite o Número do Cartão de Crédito: "))
-    # 5149450324492592
