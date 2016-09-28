@@ -27,13 +27,13 @@ def LuhnAlgorithm(number):
         Soma1 += int(number[i])
     for j in range(l - 2, -1, -2):
         Soma2 += Ajuste(int(number[j]))
-    return (Soma1 + Soma2)
+    return (Soma1 + Soma2) % 10 == 0
 
 def ValidadorCartao(cardNumberInt):
     cardNumber = str(cardNumberInt)
     bandeira = BandeiraCartao(cardNumber)
     luhn = LuhnAlgorithm(cardNumber)
-    if (bandeira == "Master Card" or bandeira == "Visa" or bandeira == "Diners Club International" or bandeira == "American Express") and luhn % 10 == 0:
+    if (bandeira == "Master Card" or bandeira == "Visa" or bandeira == "Diners Club International" or bandeira == "American Express") and LuhnAlgorithm(cardNumber):
         print("Número do Cartão: ", cardNumber)
         print("Bandeira: ", bandeira)
         print("Cartão Válido")
